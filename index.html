@@ -14,6 +14,22 @@
 	</style>
 </head>
 <body>
+	<script>
+	const BIRTH_DATE = new Date(2006, 1, 22);
+	</script>
+
+	<script>
+	function calcDayN(birthDate){
+	const now = new Date();
+	const deltaMs = now -birthDate;
+	const oneDayMs = 1000 *60 *60 *24;
+	return Math.floor(deltaMs /oneDayMs) +1;
+	}
+	</script>
+
+	<script>
+	const MY_DAY_N = calcDayN(BIRTH_DATE);
+	docment.addEventListener("")
 	<button> </button>
 </body>
 </html>
