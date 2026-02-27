@@ -1,1 +1,20 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>lutetear</title>
+        <meta name="description" content="test" />
+    </head>
+    <body>
+        <h1>DAY <span id="days-alive"></span></h1>
+        <script>
+            const birthday = new Date("2006-02-22");
+            const today = new Date();
 
+            const diffMs = today - birthday;
+            const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+            document.getElementById("days-alive").textContent = diffDays;
+        </script>
+    </body>
+</html>
