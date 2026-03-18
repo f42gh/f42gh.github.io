@@ -2,11 +2,13 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8" />
-        <title>lutetear</title>
-        <meta name="description" content="test" />
+        <title>f42/ew</title>
+        <meta name="viewport" content="width=device-width", initial-scale=1.0 />
     </head>
     <body>
-        <h1>DAY <span id="days-alive"></span></h1>
+	<div class="container">
+	<h1 id="name">Sora Maekawa</h1>
+        <h2 id="days">DAY <span id="days-alive"/span></h2>
         <script>
             const birthday = new Date("2006-02-22");
             const today = new Date();
@@ -16,5 +18,7 @@
 
             document.getElementById("days-alive").textContent = diffDays;
         </script>
+	</div>
+	
     </body>
 </html>
