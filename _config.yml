@@ -1,4 +1,8 @@
-title: f42
-description: ew's site
+title: f42/ew
+description: f42.github.io
 markdown: kramdown
-theme: minima
+defaults:
+  - scope:
+      path: ""
+      values:
+      layout: default

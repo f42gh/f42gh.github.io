@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8" />
-        <title>test</title>
+        <title>{{ page.title | default: site.title }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,11 +13,6 @@
         <link rel="stylesheet" href="/css/style.css" />
     </head>
     <body>
-        <h1 id="testmd">test.md</h1>
-<h2 id="test">test</h2>
-<p>this is test.md for <a href="https://f42gh.github.io">f42’s page</a></p>
-
-<p><strong>test</strong></p>
-
+        {{ content }}
     </body>
 </html>

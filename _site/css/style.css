@@ -1,0 +1,310 @@
+/* ============================================
+   f42/ew — dark cold transparent
+   Fonts: Helvetica Neue + Noto Sans JP
+   ============================================ */
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #0a0e17;
+    --bg-surface: rgba(15, 22, 36, 0.6);
+    --bg-glass: rgba(20, 30, 52, 0.35);
+    --border-glass: rgba(80, 120, 180, 0.15);
+    --text-primary: #c8d6e5;
+    --text-secondary: rgba(160, 180, 210, 0.7);
+    --text-muted: rgba(130, 155, 185, 0.45);
+    --accent: #4a8eff;
+    --accent-dim: rgba(74, 142, 255, 0.15);
+    --link: #5e9fff;
+    --link-hover: #8ab8ff;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Helvetica Neue", "Noto Sans JP", sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    min-height: 100vh;
+    padding: 3rem 1.5rem;
+    max-width: 640px;
+    margin: 0 auto;
+    background-image:
+        radial-gradient(ellipse at 20% 0%, rgba(40, 70, 130, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 100%, rgba(30, 50, 100, 0.08) 0%, transparent 50%);
+}
+
+/* --- Hero section (index) --- */
+.hero {
+    padding: 2rem 0 3rem;
+    border-bottom: 1px solid var(--border-glass);
+    margin-bottom: 3rem;
+}
+
+.hero .name {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--text-primary);
+}
+
+.hero .days {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+.hero .days span {
+    color: var(--accent);
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+}
+
+/* --- Posts list (index) --- */
+.posts-header {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+}
+
+.posts-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.posts-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.75rem 1rem;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 6px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.posts-list li:hover {
+    background: rgba(25, 40, 65, 0.45);
+    border-color: rgba(80, 120, 180, 0.3);
+}
+
+.posts-list li a {
+    color: var(--link);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+.posts-list li a:hover {
+    color: var(--link-hover);
+}
+
+.posts-list li .date {
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    margin-left: 1.5rem;
+}
+
+/* ============================================
+   Post content — .md から生成される素の HTML 用
+   ============================================ */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-glass);
+}
+
+h2 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin: 1.4rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    line-height: 1.8;
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+strong {
+    font-weight: 600;
+    color: #dce6f0;
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* lists inside posts */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.3rem 0;
+    color: var(--text-primary);
+    line-height: 1.7;
+}
+
+li::marker {
+    color: var(--text-muted);
+}
+
+/* code */
+code {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.85em;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 4px;
+    padding: 0.15em 0.4em;
+    color: var(--accent);
+}
+
+pre {
+    margin: 1.2rem 0;
+    padding: 1rem 1.2rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-glass);
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+}
+
+/* blockquote */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 3px solid var(--accent-dim);
+    background: var(--bg-glass);
+    border-radius: 0 6px 6px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    color: var(--text-secondary);
+    margin: 0.3rem 0;
+}
+
+/* hr */
+hr {
+    border: none;
+    border-top: 1px solid var(--border-glass);
+    margin: 2rem 0;
+}
+
+/* images */
+img {
+    max-width: 100%;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+
+/* table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2rem 0;
+}
+
+th, td {
+    padding: 0.5rem 0.8rem;
+    border: 1px solid var(--border-glass);
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+th {
+    background: var(--bg-glass);
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* --- Empty state --- */
+.empty {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+    body {
+        padding: 2rem 1rem;
+    }
+
+    .hero .name {
+        font-size: 1.4rem;
+    }
+
+    .posts-list li {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .posts-list li .date {
+        margin-left: 0;
+    }
+}

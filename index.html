@@ -1,16 +1,26 @@
 ---
+layout: default
+title: f42/ew
 ---
+
 <!doctype html>
 <html lang="ja">
     <head>
         <meta charset="UTF-8" />
         <title>f42/ew</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/css/style.css" />
     </head>
     <body>
-        <div>
-            <h2 id="name">f42 / ew</h2>
-            <h2 id="days">DAY <span id="days-alive"></span></h2>
+        <div class="hero">
+            <div class="name">f42 / ew</div>
+            <div class="days">DAY <span id="days-alive"></span></div>
             <script>
                 const birthday = new Date("2006-02-22");
                 const today = new Date();
@@ -19,16 +29,15 @@
                 document.getElementById("days-alive").textContent = diffDays;
             </script>
         </div>
-        <div>
-            <h2>Posts</h2>
-            <ul>
-                {% for post in site.posts %}
-                <li>
-                    <a href="{{ post.url }}">{{ post.title }}</a>
-                    <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
+
+        <div class="posts-header">Posts</div>
+        <ul class="posts-list">
+            {% for post in site.posts %}
+            <li>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+                <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
+            </li>
+            {% endfor %}
+        </ul>
     </body>
 </html>
