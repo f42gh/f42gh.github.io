@@ -7,7 +7,7 @@
         <title>f42/ew</title>
         <meta name="viewport" content="width=device-width", initial-scale=1.0 />
     </head>
-    >
+    <body>
 	<div>
 	<h2 id="name">f42 / ew</h2>
         <h2 id="days">DAY <span id="days-alive"/span></h2>
@@ -24,10 +24,12 @@
     <div>
    	<h2>Posts</h2>
     <ul>
+        {% for post in site.posts %}
         <li>
         <a href="{{ post.url }}">{{ post.title }}</a>
         <span>{{ post.date | date: "%Y-%m-%d" }}</span>
         </li>
+        {% endfor %}
     </ul>
     </div>
     </body>
