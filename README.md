@@ -1,2 +1,1 @@
-# f42gh.github.io
-- Jekyllを用いて、.mdを_postsにpushすることで自動CDを実現しています
+Jekyll を使った静的サイト。Markdown で記事を書いて push すると GitHub Pages が自動でビルド・デプロイする構成。
