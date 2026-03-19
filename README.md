@@ -1,2 +1,2 @@
 # f42gh.github.io
-GitHub Pages
+- Jekyllを用いて、.mdを_postsにpushすることで自動CDを実現しています
