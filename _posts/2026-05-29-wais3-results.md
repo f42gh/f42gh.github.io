@@ -1,7 +1,8 @@
 ---
 title: "WAIS-3を受けてきた話"
-layout: default
+layout: post
 date: 2026-05-29
+tags: [self, wais]
 ---
 
 # WAIS-3を受けてきた話

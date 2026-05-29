@@ -1,7 +1,8 @@
 ---
 title: "WSLでClaude Code × Telegramを動かすまで：ハマりポイント全記録"
-layout: default
+layout: post
 date: 2026-05-28
+tags: [tech, claude-code]
 ---
 
 # WSLでClaude Code × Telegramを動かすまで：ハマりポイント全記録
