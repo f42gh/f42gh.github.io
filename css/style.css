@@ -334,6 +334,15 @@ th {
     display: flex;
     flex-direction: column;
     min-width: 0;
+    width: 100%;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.3rem;
+    flex-wrap: wrap;
 }
 
 .post-tags {

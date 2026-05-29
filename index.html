@@ -21,13 +21,6 @@ title: f42/ew
         <div class="hero">
             <div class="name">f42 / ew</div>
             <div class="days">DAY <span id="days-alive"></span></div>
-            <script>
-                const birthday = new Date("2006-02-22");
-                const today = new Date();
-                const diffMs = today - birthday;
-                const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-                document.getElementById("days-alive").textContent = diffDays;
-            </script>
         </div>
 
         <div class="posts-header">Posts</div>
@@ -36,25 +29,29 @@ title: f42/ew
             <li>
                 <div class="post-main">
                     <a href="{{ post.url }}">{{ post.title }}</a>
-                    {% if post.tags and post.tags.size > 0 %}
-                    <div class="tag-list">
-                        {% for tag in post.tags %}
-                        <span class="tag">{{ tag }}</span>
-                        {% endfor %}
+                    <div class="post-meta">
+                        <span class="date" data-date="{{ post.date | date: '%Y-%m-%d' }}"></span>
+                        {% if post.tags and post.tags.size > 0 %}
+                        <div class="tag-list">
+                            {% for tag in post.tags %}
+                            <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
                     </div>
-                    {% endif %}
                 </div>
-                <span class="date" data-date="{{ post.date | date: '%Y-%m-%d' }}"></span>
             </li>
             {% endfor %}
         </ul>
 
         <script>
             const birthday = new Date("2006-02-22");
+            const today = new Date();
+            document.getElementById("days-alive").textContent =
+                Math.floor((today - birthday) / 86400000);
             document.querySelectorAll(".date[data-date]").forEach(el => {
-                const postDate = new Date(el.dataset.date);
-                const days = Math.floor((postDate - birthday) / (1000 * 60 * 60 * 24));
-                el.textContent = "DAY " + days;
+                const d = Math.floor((new Date(el.dataset.date) - birthday) / 86400000);
+                el.textContent = "DAY " + d;
             });
         </script>
     </body>
