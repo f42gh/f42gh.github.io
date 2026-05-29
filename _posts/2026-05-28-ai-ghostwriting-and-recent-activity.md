@@ -1,7 +1,8 @@
 ---
 title: "ブログ書くの億劫すぎてAIに代筆してもらいます"
-layout: default
+layout: post
 date: 2026-05-28
+tags: [ai, blog]
 ---
 
 # ブログ書くの億劫すぎてAIに代筆してもらいます
