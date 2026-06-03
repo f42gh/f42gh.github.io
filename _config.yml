@@ -1,6 +1,7 @@
 title: f42/ew
 description: f42.github.io
 markdown: kramdown
+future: true
 defaults:
   - scope:
       path: ""
